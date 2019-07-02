@@ -24,10 +24,10 @@
 		<p>
 			<button
 				id="toggleNavMenu"
-				on="tap:AMP.setState({ navMenuExpanded: ! navMenuExpanded })"
 				aria-controls="navMenu"
 				aria-expanded="false"
 				[aria-expanded]="navMenuExpanded ? 'true' : 'false'"
+				on="tap:AMP.setState({ navMenuExpanded: ! navMenuExpanded })"
 			>Toggle Menu</button>
 		</p>
 		<nav id="navMenu" hidden [hidden]="!navMenuExpanded">

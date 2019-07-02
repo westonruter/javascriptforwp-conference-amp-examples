@@ -13,6 +13,10 @@
 			body {
 				padding: 0 1em;
 			}
+			/* TODO: Eliminate once hidden attribute can be used as of https://github.com/ampproject/amphtml/issues/23156 */
+			.hidden {
+				display: none;
+			}
 		</style>
 	</head>
 	<body>
@@ -24,7 +28,7 @@
 					aria-expanded="false"
 				>Toggle Menu</button>
 			</p>
-			<nav id="navMenu" hidden>
+			<nav id="navMenu" class="hidden"><!-- TODO: Replace class with hidden attribute once closed: https://github.com/ampproject/amphtml/issues/23156 -->
 				<ul>
 					<li><a href="nav-menu-via-amp-sidebar.html">via amp-sidebar</a></li>
 					<li><a href="nav-menu-via-amp-action.html">via AMP action</a></li>
