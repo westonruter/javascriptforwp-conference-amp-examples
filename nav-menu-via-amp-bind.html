@@ -28,7 +28,8 @@
 				aria-expanded="false"
 				[aria-expanded]="navMenuExpanded ? 'true' : 'false'"
 				on="tap:AMP.setState({ navMenuExpanded: ! navMenuExpanded })"
-			>Toggle Menu</button>
+				[text]="navMenuExpanded ? 'Close Menu' : 'Open Menu'"
+			>Open Menu</button>
 		</p>
 		<nav id="navMenu" hidden [hidden]="!navMenuExpanded">
 			<ul>
