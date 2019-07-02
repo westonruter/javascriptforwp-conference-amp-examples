@@ -1,0 +1,54 @@
+<!doctype html>
+<html amp>
+	<head>
+		<meta charset="utf-8">
+		<link rel="canonical" href="nav-menu-via-amp-bind.html" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+		<script async src="https://cdn.ampproject.org/v0.js"></script>
+
+		<title>Nav Menu via amp-bind</title>
+		<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+		<style amp-custom>
+			body {
+				padding: 0 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<amp-state id="navMenuExpanded">
+			<script type="application/json">
+				false
+			</script>
+		</amp-state>
+		<p>
+			<button
+				id="toggleNavMenu"
+				on="tap:AMP.setState({ navMenuExpanded: ! navMenuExpanded })"
+				aria-controls="navMenu"
+				aria-expanded="false"
+				[aria-expanded]="navMenuExpanded ? 'true' : 'false'"
+			>Toggle Menu</button>
+		</p>
+		<nav id="navMenu" hidden [hidden]="!navMenuExpanded">
+			<ul>
+				<li><a href="nav-menu-via-amp-sidebar.html">via amp-sidebar</a></li>
+				<li><a href="nav-menu-via-amp-action.html">via AMP action</a></li>
+				<li><a href="nav-menu-via-amp-bind.html">via amp-bind</a></li>
+				<li><a href="nav-menu-via-amp-script.html">via amp-script</a></li>
+			</ul>
+		</nav>
+
+		<h1>Nav Menu via <code>amp-bind</code></h1>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nisi tellus, bibendum eget nisi nec, pretium consequat augue. Nulla eget pretium augue, non maximus arcu. Duis nec tortor leo. Ut eget nibh malesuada, volutpat quam ac, eleifend ligula. Pellentesque tempus, dui aliquet volutpat pulvinar, mauris nisl laoreet tortor, nec accumsan enim nulla eget odio. Integer eu nisl vel turpis accumsan congue. Donec sed sollicitudin odio, eget consequat lorem. Mauris egestas est ut arcu volutpat scelerisque. In tellus massa, malesuada non condimentum vel, facilisis at eros. Donec rhoncus felis non aliquet aliquet. Nunc porttitor purus turpis, vitae fermentum lorem dapibus hendrerit. Nunc ligula mi, pellentesque vel augue in, interdum suscipit velit. Vestibulum sit amet est id tortor venenatis pulvinar. In a ex condimentum, tempor eros a, volutpat dolor. Morbi ac ligula risus.</p>
+
+		<p>Vivamus tincidunt id sapien id consectetur. Donec at vehicula arcu, vitae dictum augue. Integer aliquet placerat orci, eu eleifend nunc bibendum quis. Quisque ex tellus, tincidunt et tristique ut, ultrices eu risus. Nam lorem risus, consequat vel justo imperdiet, laoreet cursus ipsum. Aliquam feugiat malesuada velit posuere commodo. Ut vel congue nunc, quis gravida urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ipsum elit, finibus ac augue sed, auctor pretium ligula. Donec ac dui in eros lacinia dictum.</p>
+
+		<p>Nullam imperdiet euismod ornare. Quisque neque diam, pharetra at commodo non, posuere pulvinar arcu. Phasellus id ante eu ligula egestas feugiat vel non tellus. Cras finibus sit amet quam eu porta. Fusce condimentum mattis urna eu cursus. Proin dictum vulputate odio, in aliquet libero vulputate rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris eu dolor lacinia, convallis nunc sit amet, pharetra tortor. Etiam eleifend malesuada sapien a tincidunt. Cras placerat felis ligula, nec mattis arcu commodo eu. Pellentesque eget varius purus, ut fringilla nulla. In a leo ac ipsum imperdiet pulvinar. Etiam lorem tortor, euismod viverra pretium eget, rutrum eu turpis.</p>
+
+		<p>Integer ac imperdiet mi, sit amet lobortis nisi. Phasellus accumsan magna sit amet orci convallis, eget volutpat lectus efficitur. Curabitur sagittis iaculis ligula in lobortis. Aenean vehicula libero eu purus molestie pretium. Nunc tempus tincidunt felis, eu tincidunt lorem venenatis in. Morbi eget mi non nulla ornare egestas. Praesent porttitor, odio nec mattis egestas, ligula erat sollicitudin justo, eget varius dolor orci a nunc. Aliquam porttitor dapibus nulla, eu hendrerit erat tincidunt in. Nam et nibh fringilla, efficitur orci sed, rutrum massa. Etiam imperdiet elit egestas, dignissim sem eget, pharetra magna. Vestibulum auctor ante sed dolor imperdiet, interdum malesuada est tincidunt. Ut at risus eu purus tincidunt rhoncus non ut sapien. Suspendisse eu purus quis metus viverra fringilla ac id mauris. Nullam iaculis libero congue tristique consequat. Nullam mattis ex eget orci ullamcorper, a faucibus orci tincidunt.</p>
+
+		<p>Nam enim urna, molestie vitae cursus sed, fermentum ac nunc. Nulla facilisi. Nunc scelerisque tincidunt fermentum. Vivamus imperdiet eros sem, at rutrum est consequat fermentum. Nulla nec nisi vel enim vehicula varius. Integer sed odio interdum, porttitor augue placerat, semper tellus. Integer sit amet orci elit. Curabitur faucibus mauris in risus dictum, ac pharetra velit porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit iaculis tellus eget tincidunt. Vivamus eget lorem vel nisl euismod porta.</p>
+	</body>
+</html>
