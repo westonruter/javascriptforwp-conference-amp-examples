@@ -19,28 +19,24 @@ async function startDrawing( event ) {
     let x = 0;
     let y = 0;
 
-    // The x and y offset of the canvas from the edge
-    // of the page.
-    const rect = await canvas.getBoundingClientRectAsync();
-
     // Add the event listeners for mousedown, mousemove, and mouseup
     canvas.addEventListener( 'mousedown', e => {
-        x = e.pageX - rect.left;
-        y = e.pageY - rect.top;
+        x = e.offsetX;
+        y = e.offsetY;
         isDrawing = true;
     } );
 
     canvas.addEventListener( 'mousemove', e => {
         if ( isDrawing === true ) {
-            drawLine( context, x, y, e.pageX - rect.left, e.pageY - rect.top );
-            x = e.pageX - rect.left;
-            y = e.pageY - rect.top;
+            drawLine( context, x, y, e.offsetX, e.offsetY );
+            x = e.offsetX;
+            y = e.offsetY;
         }
     } );
 
     canvas.addEventListener( 'mouseup', e => {
         if ( isDrawing === true ) {
-            drawLine( context, x, y, e.pageX - rect.left, e.pageY - rect.top );
+            drawLine( context, x, y, e.offsetX, e.offsetY );
             x = 0;
             y = 0;
             isDrawing = false;
