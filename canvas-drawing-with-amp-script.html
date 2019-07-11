@@ -28,9 +28,11 @@
 	<body>
 		<h1>Canvas Drawing with <code>amp-script</code></h1>
 
-		<p>This replicates the MDN canvas drawing example in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event#JavaScript"><code>mousemove</code> event docs</a>.</p>
+		<p>This ports the MDN canvas drawing example in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event#JavaScript"><code>mousemove</code> event docs</a>.</p>
 
 		<p>In order to use this example, you may need to first run this in your console: <code>! AMP.isExperimentOn('amp-script') &amp;&amp; AMP.toggleExperiment('amp-script')</code></p>
+
+		<p>👉 There is a known issue where if you draw continually for more than a couple seconds, the <code>amp-script</code> will crash; to prevent that from happening, just re-mousedown every couple seconds.</p>
 
 		<amp-script src="canvas-drawing-with-amp-script.js" width="400" height="400" layout="fixed">
 			<button>Start drawing!</button>
